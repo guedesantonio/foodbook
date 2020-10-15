@@ -1,0 +1,32 @@
+{
+  "name": "foodbook",
+  "version": "1.0.0",
+  "description": "?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guedesantonio/the-wedding-list.git"
+  },
+  "keywords": [
+    "food"
+  ],
+  "author": "Antonio Guedes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guedesantonio/the-wedding-list/issues"
+  },
+  "homepage": "https://github.com/guedesantonio/the-wedding-list#readme",
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.4",
+    "eslint-plugin-react-hooks": "^4.1.2"
+  }
+}
