@@ -3,19 +3,19 @@ import React from 'react';
 const Members = () => {
   return (
     <div>
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/logout">
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <a className="navbar-brand" href="/logout">
               Logout
       </a>
           </div>
         </div>
       </nav>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <h2>Welcome <span class="member-name"></span></h2>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">
+            <h2>Welcome <span className="member-name"></span></h2>
           </div>
         </div>
       </div>
