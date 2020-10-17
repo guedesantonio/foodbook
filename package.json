@@ -30,6 +30,12 @@
   "homepage": "https://github.com/guedesantonio/the-wedding-list#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "bcryptjs": "2.4.3",
+    "express-session": "^1.16.1",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.8.6",
     "if-env": "^1.0.4"
   },
   "devDependencies": {
