@@ -3,12 +3,17 @@ import NoMatch from "./pages/NoMatch";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import Members from "./pages/members";
+import Navbar from "./components/layout/Navbar";
+import Landing from "./components/layout/Landing";
+
 import "./stylesheets/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 function App() {
   return (
     <Router>
+        <Navbar/>
+        <Landing/>
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={SignUp} />
