@@ -19,6 +19,7 @@ module.exports = (passport) => {
           }
           return done(null, false);
         })
+        // eslint-disable-next-line no-console
         .catch((err) => console.log(err));
     }),
   );
