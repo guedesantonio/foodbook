@@ -1,17 +1,18 @@
 import React from 'react';
+import { Navbar, NavbarBrand, } from 'reactstrap';
 
 const Members = () => {
   return (
     <div>
-      <nav className="navbar navbar-default">
+      <Navbar>
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" href="/logout">
+          <NavbarBrand href="/logout">
               Logout
-      </a>
+      </NavbarBrand>
           </div>
         </div>
-      </nav>
+      </Navbar>
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
