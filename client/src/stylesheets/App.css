@@ -1,1 +1,7 @@
-
+.profileImage {
+  border-radius: 50%;
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
