@@ -122,10 +122,12 @@ return (
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
-                    marginTop: "1rem"
+                    marginTop: "1rem",
+                    backgroundColor:"#3C5A98",
+                    color:"white"
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                  className="btn btn-large waves-effect waves-light hoverable accent-3"
                 >
                   Sign up
                 </button>

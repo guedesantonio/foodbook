@@ -7,13 +7,11 @@ class Landing extends Component {
         <div className="row">
           <div className="col s12 center-align">
             <h4>
-              <b>Build</b> a login/auth app with the{" "}
-              <span style={{ fontFamily: "monospace" }}>MERN</span> stack from
-              scratch
+              <b>Foodbook:</b> Collect, share and search your favourite {" "}
+              <span style={{ fontFamily: "monospace" }}>RECIPES</span>!
             </h4>
             <p className="flow-text grey-text text-darken-1">
-              Create a (minimal) full-stack app with user authentication via
-              passport and JWTs
+              LOG IN or Register to start connecting with your favourite chefs!
             </p>
             <br />
             <div className="col s6">
@@ -22,9 +20,11 @@ class Landing extends Component {
                 style={{
                   width: "140px",
                   borderRadius: "3px",
-                  letterSpacing: "1.5px"
+                  letterSpacing: "1.5px",
+                  backgroundColor:"#3C5A98",
+                  color:"white"
                 }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                className="btn btn-large waves-effect waves-light hoverable accent-3"
               >
                 Register
               </Link>
@@ -35,9 +35,11 @@ class Landing extends Component {
                 style={{
                   width: "140px",
                   borderRadius: "3px",
-                  letterSpacing: "1.5px"
+                  letterSpacing: "1.5px",
+                  backgroundColor:"#3C5A98",
+                  color:"white"
                 }}
-                className="btn btn-large btn-flat waves-effect white black-text"
+                className="btn btn-large btn-flat waves-effect "
               >
                 Log In
               </Link>
