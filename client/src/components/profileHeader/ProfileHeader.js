@@ -24,25 +24,30 @@ class ProfileHeader extends Component {
             </div>
             <div className="row">
                 <div className="col s12 center-align">
-                    <Card>
+                    <button
+                        style={{
+                        width: "150px",
+                        borderRadius: "3px",
+                        letterSpacing: "1.5px",
+                        marginTop: "1rem",
+                        backgroundColor:"#3C5A98",
+                        color:"white",
+                    
+                        }}
+                        onClick={this.onLogoutClick}
+                        className="btn btn-large waves-effect waves-light hoverable accent-3"
+                    >
+                        Logout
+                    </button>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col s12 center-align">
+                    <Card style={{backgroundColor:"#3C5A98", color:"white"}}>
                         <CardBody>
                             <CardTitle>{user.name}</CardTitle>
                             <CardSubtitle>Chef</CardSubtitle>
                             <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                            <button
-                                style={{
-                                width: "150px",
-                                borderRadius: "3px",
-                                letterSpacing: "1.5px",
-                                marginTop: "1rem",
-                                backgroundColor:"#3C5A98",
-                                color:"white"
-                                }}
-                                onClick={this.onLogoutClick}
-                                className="btn btn-large waves-effect waves-light hoverable accent-3"
-                            >
-                                Logout
-                            </button>
                         </CardBody>
                     </Card>
                     <p>{JSON.stringify(user)}</p>
