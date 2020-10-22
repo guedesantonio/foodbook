@@ -11,20 +11,13 @@ const RecipeModal = (props) => {
         title,
         image,
         recipe,
-        ID
+        ID,
     } = props;
 
     const [modal, setModal] = useState(false);
-    const [recipeInfo, setRecipeInfo] = useState(null);
 
-    useEffect(async () => {
-        const recipeInfo = await RecipeService.getRecipe(ID);
-        if (recipeInfo) {
-          setRecipeInfo(recipeInfo);
-        }
-      }, []);
-    
-      console.log(recipeInfo);
+
+
     const toggle = () => setModal(!modal);
 
     return (
@@ -41,23 +34,62 @@ const RecipeModal = (props) => {
                 {buttonLabel}
             </Button>
             <Modal isOpen={modal} toggle={toggle} modalClassName="modal-dialog"  >
-                <ModalHeader toggle={toggle}>{title}</ModalHeader>
-                <ModalBody>
-                    <img
-                        style={{ maxHeight: "150px", maxWidth: "150px" }}
-                        src={image}
-                        className="card-img"
-                        alt={title}
-                    />
-                        {recipe}
-        </ModalBody>
-                <ModalFooter>
-                    <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                    <Button color="secondary" onClick={toggle}>Cancel</Button>
-                </ModalFooter>
+                {modal && <ModalContent
+                    title={title}
+                    image={image}
+                    recipe={recipe}
+                    ID={ID}
+                    toggle={toggle}
+                />}
             </Modal>
         </div>
     );
 }
 
 export default RecipeModal;
+
+
+const ModalContent = (props) => {
+
+    const {
+        title,
+        image,
+        recipe,
+        ID,
+        toggle
+    } = props;
+
+    const [recipeInfo, setRecipeInfo] = useState(null);
+
+    useEffect( () => {
+        RecipeService.getRecipe(ID).then( (recipeInfo) => {
+            if (recipeInfo) {
+                setRecipeInfo(recipeInfo);
+            }
+        }
+        );
+    }, []);
+
+
+    console.log(recipeInfo);
+    return (
+
+        <div>
+            <ModalHeader toggle={toggle}>{title}</ModalHeader>
+            <ModalBody>
+                <img
+                    style={{ maxHeight: "150px", maxWidth: "150px" }}
+                    src={image}
+                    className="card-img"
+                    alt={title}
+                />
+                {recipe}
+            </ModalBody>
+            <ModalFooter>
+                <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+                <Button color="secondary" onClick={toggle}>Cancel</Button>
+            </ModalFooter>
+        </div>
+    );
+}
+
