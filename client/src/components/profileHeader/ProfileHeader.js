@@ -19,7 +19,10 @@ class ProfileHeader extends Component {
         <div>
             <div className="row">
                 <div className="col s12 center-align">
-                    <img className="profileImage" src="https://avatars0.githubusercontent.com/u/65220293?s=460&u=74c60e59640854e8f9d2734b4a3a441ae0853c73&v=4" alt="Avatar"/>
+                    <img 
+                    className="profileImage" 
+                    src="https://avatars0.githubusercontent.com/u/65220293?s=460&u=74c60e59640854e8f9d2734b4a3a441ae0853c73&v=4" 
+                    alt="Avatar"/>
                 </div>
             </div>
             <div className="row">
