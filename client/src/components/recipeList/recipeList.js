@@ -1,5 +1,6 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, Button, Container, Row, Col } from 'reactstrap';
+import RecipeModal from '../modal/Modal';
 
 class RecipeList extends React.Component {
 
@@ -27,6 +28,12 @@ class RecipeList extends React.Component {
                                     <h4>{recipe.title}</h4>
                                 </Col>
                                 <Col>
+                                    <RecipeModal
+                                    buttonLabel="View"
+                                    className="btn"
+                                    >
+                                    View
+                                    </RecipeModal>
                                     <Button
                                         style={{
                                             width: "70px",
@@ -34,17 +41,8 @@ class RecipeList extends React.Component {
                                             letterSpacing: "1.5px",
                                             backgroundColor: "#3C5A98",
                                             color: "white"
-                                        }}>
-                                        View
-                                      </Button>
-                                    <Button
-                                        style={{
-                                            width: "70px",
-                                            borderRadius: "3px",
-                                            letterSpacing: "1.5px",
-                                            backgroundColor: "#3C5A98",
-                                            color: "white"
-                                        }}>
+                                        }}
+                                        >
                                         Save
                                       </Button>
                                 </Col>
