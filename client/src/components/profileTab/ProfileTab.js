@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import RecipesCarousel from "../carousel/Carousel.js"
 import SearchList from '../searchList/SearchList.js';
 import RecipeModal from '../modal/Modal.js';
+import ProfileRecipeList from '../profileRecipeList/ProfileRecipeList.js';
 
 const ProfileTab = (props) => {
   const [activeTab, setActiveTab] = useState('1');
@@ -46,18 +47,7 @@ const ProfileTab = (props) => {
         <TabPane tabId="2">
           <Row>
             <Col sm="6">
-              <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-              </Card>
-            </Col>
-            <Col sm="6">
-              <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
-                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                <Button>Go somewhere</Button>
-              </Card>
+              <ProfileRecipeList/>
             </Col>
           </Row>
         </TabPane>

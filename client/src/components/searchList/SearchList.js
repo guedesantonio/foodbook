@@ -52,7 +52,7 @@ class SearchList extends React.Component {
               }}>Search</Button>
           </Form>
         </Container>
-            <RecipeList recipes={this.state.recipeList}/>
+            <RecipeList recipes={this.state.recipeList} btnType={"Save"}/>
       </Card>
     );
   };

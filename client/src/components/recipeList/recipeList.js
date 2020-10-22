@@ -6,6 +6,7 @@ class RecipeList extends React.Component {
 
     render() {
         const recipes = this.props.recipes;
+        const btnType = this.props.btnType;
         return (
             <ListGroup >
                 {recipes && recipes.map(recipe => (
@@ -46,7 +47,7 @@ class RecipeList extends React.Component {
                                             color: "white"
                                         }}
                                         >
-                                        Save
+                                        {btnType}
                                       </Button>
                                 </Col>
                             </Row>
