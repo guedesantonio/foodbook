@@ -13,4 +13,17 @@ export default class RecipeService {
             return null;
         }
     }
+
+    static async getRecipe(recipeID) {
+        try {
+            const res = await axios.get(`https://api.spoonacular.com/recipes/${recipeID}/information?includeNutrition=false&apiKey=${apiKey}`);
+            return res.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+
+
+
 }

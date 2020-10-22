@@ -30,7 +30,10 @@ class RecipeList extends React.Component {
                                 <Col>
                                     <RecipeModal
                                     buttonLabel="View"
-                                    className="btn"
+                                    title=""
+                                    image=""
+                                    recipe=""
+                                    ID={recipe.id}
                                     >
                                     View
                                     </RecipeModal>

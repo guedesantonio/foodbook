@@ -1,17 +1,30 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Col } from 'reactstrap';
-import "./modal.css"
+import "./modal.css";
+import RecipeService from "../../services/RecipeService";
 
 const RecipeModal = (props) => {
     const {
         buttonLabel,
-        className
+        title,
+        image,
+        recipe,
+        ID
     } = props;
 
     const [modal, setModal] = useState(false);
+    const [recipeInfo, setRecipeInfo] = useState(null);
 
+    useEffect(async () => {
+        const recipeInfo = await RecipeService.getRecipe(ID);
+        if (recipeInfo) {
+          setRecipeInfo(recipeInfo);
+        }
+      }, []);
+    
+      console.log(recipeInfo);
     const toggle = () => setModal(!modal);
 
     return (
@@ -27,16 +40,22 @@ const RecipeModal = (props) => {
                 onClick={toggle}>
                 {buttonLabel}
             </Button>
-                <Modal isOpen={modal} toggle={toggle} modalClassName="modal-dialog"  >
-                    <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-                    <ModalBody>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <Modal isOpen={modal} toggle={toggle} modalClassName="modal-dialog"  >
+                <ModalHeader toggle={toggle}>{title}</ModalHeader>
+                <ModalBody>
+                    <img
+                        style={{ maxHeight: "150px", maxWidth: "150px" }}
+                        src={image}
+                        className="card-img"
+                        alt={title}
+                    />
+                        {recipe}
         </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                        <Button color="secondary" onClick={toggle}>Cancel</Button>
-                    </ModalFooter>
-                </Modal>
+                <ModalFooter>
+                    <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+                    <Button color="secondary" onClick={toggle}>Cancel</Button>
+                </ModalFooter>
+            </Modal>
         </div>
     );
 }

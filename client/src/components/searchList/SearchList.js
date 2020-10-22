@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Form, FormGroup, Label, Input, Button, Container} from 'reactstrap';
 import RecipeService from "../../services/RecipeService";
 import RecipeList from "../recipeList/recipeList"
-let recipeList = [];
+
 
 class SearchList extends React.Component {
 
