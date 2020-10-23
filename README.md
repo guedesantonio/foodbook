@@ -16,7 +16,7 @@
 
   ## Installation
 
-? [here](https://fast-brook-67955.herokuapp.com/) and start using it.
+? [here]() and start using it.
 
 
   ## Usage
