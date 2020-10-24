@@ -19,7 +19,7 @@ const RecipeModal = (props) => {
     const toggle = () => setModal(!modal);
 
     return (
-        <div>
+        <div >
             <Button
                 style={{
                     width: "70px",
@@ -31,7 +31,7 @@ const RecipeModal = (props) => {
                 onClick={toggle}>
                 {buttonLabel}
             </Button>
-            <Modal isOpen={modal} toggle={toggle} modalClassName="modal-dialog" style={{ minHeight:"1000%", maxHeight: "100vh", overflowY: "auto"}}>
+            <Modal isOpen={modal} toggle={toggle} modalClassName="modal-dialog" style={{ maxHeight: "100vh", overflowY: "auto" }}>
                 {modal && <ModalContent
                     ID={ID}
                     toggle={toggle}
@@ -67,14 +67,7 @@ const ModalContent = (props) => {
     return (
 
         <div>
-            <ModalHeader toggle={toggle}>{recipeInfo.title}</ModalHeader>
-            <ModalBody   >
-               <RecipeModalBody recipeInfo={recipeInfo} />
-            </ModalBody>
-            <ModalFooter>
-                <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                <Button color="secondary" onClick={toggle}>Cancel</Button>
-            </ModalFooter>
+               <RecipeModalBody recipeInfo={recipeInfo} toggle={toggle}/>
         </div>
     );
 }

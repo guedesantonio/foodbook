@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, Button, Container, Row, Col } from 'reactstrap';
-import RecipeModal from '../modal/Modal';
+import RecipeModal from '../RecipeModal/RecipeModal';
 
 class RecipeList extends React.Component {
 
