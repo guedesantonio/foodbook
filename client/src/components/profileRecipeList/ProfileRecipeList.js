@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Form, FormGroup, Label, Input, Button, Container} from 'reactstrap';
+import { Card, Container} from 'reactstrap';
 import RecipeList from "../recipeList/recipeList"
 
 
@@ -17,4 +17,4 @@ class ProfileRecipeList extends React.Component {
   };
 }
 
-export default ProfileRecipeList;
+export default ProfileRecipeList; 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col} from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Row, Col} from 'reactstrap';
 import classnames from 'classnames';
-import RecipesCarousel from "../carousel/Carousel.js"
 import SearchList from '../searchList/SearchList.js';
 import RecipeModal from '../modal/Modal.js';
 import ProfileRecipeList from '../profileRecipeList/ProfileRecipeList.js';

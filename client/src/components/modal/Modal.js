@@ -1,16 +1,14 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React, { useState, useEffect } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Col } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import "./modal.css";
 import RecipeService from "../../services/RecipeService";
+import RecipeModalBody from '../recipeModalBody/RecipeModalBody';
 
 const RecipeModal = (props) => {
     const {
         buttonLabel,
-        title,
-        image,
-        recipe,
         ID,
     } = props;
 
@@ -33,11 +31,8 @@ const RecipeModal = (props) => {
                 onClick={toggle}>
                 {buttonLabel}
             </Button>
-            <Modal isOpen={modal} toggle={toggle} modalClassName="modal-dialog"  >
+            <Modal isOpen={modal} toggle={toggle} modalClassName="modal-dialog" style={{ minHeight:"1000%", maxHeight: "100vh", overflowY: "auto"}}>
                 {modal && <ModalContent
-                    title={title}
-                    image={image}
-                    recipe={recipe}
                     ID={ID}
                     toggle={toggle}
                 />}
@@ -52,14 +47,11 @@ export default RecipeModal;
 const ModalContent = (props) => {
 
     const {
-        title,
-        image,
-        recipe,
         ID,
         toggle
     } = props;
 
-    const [recipeInfo, setRecipeInfo] = useState(null);
+    const [recipeInfo, setRecipeInfo] = useState([]);
 
     useEffect( () => {
         RecipeService.getRecipe(ID).then( (recipeInfo) => {
@@ -75,15 +67,9 @@ const ModalContent = (props) => {
     return (
 
         <div>
-            <ModalHeader toggle={toggle}>{title}</ModalHeader>
-            <ModalBody>
-                <img
-                    style={{ maxHeight: "150px", maxWidth: "150px" }}
-                    src={image}
-                    className="card-img"
-                    alt={title}
-                />
-                {recipe}
+            <ModalHeader toggle={toggle}>{recipeInfo.title}</ModalHeader>
+            <ModalBody   >
+               <RecipeModalBody recipeInfo={recipeInfo} />
             </ModalBody>
             <ModalFooter>
                 <Button color="primary" onClick={toggle}>Do Something</Button>{' '}

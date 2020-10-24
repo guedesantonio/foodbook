@@ -20,6 +20,13 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  description: {
+    type: String,
+    default: ""
+  },
+  recipes: {
+    type: Array
+  }
 });
 // eslint-disable-next-line no-multi-assign
 module.exports = User = mongoose.model('users', UserSchema);
