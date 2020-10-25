@@ -19,7 +19,7 @@ class ProfileHeader extends Component {
             <div style={{paddingTop:"40px"}}>
                 <div className="row">
                     <div className="col s12 center-align">
-                        <Card style={{ backgroundColor: "#3C5A98", color: "white" }}>
+                        <Card style={{ backgroundColor: "#FF8802", color: "white" }}>
                             <CardBody>
                                 <CardTitle>
                                     <h4>
@@ -34,7 +34,7 @@ class ProfileHeader extends Component {
                                 borderColor:"white",
                                 letterSpacing: "1.5px",
                                 marginTop: "1rem",
-                                backgroundColor: "#3C5A98",
+                                backgroundColor: "#FF8802",
                                 color: "white",
 
                             }}

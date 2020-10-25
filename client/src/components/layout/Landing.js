@@ -3,14 +3,24 @@ import { Link } from "react-router-dom";
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div style={{ height: "75vh",  }} className="container valign-wrapper">
         <div className="row">
-          <div className="col s12 center-align">
+          <div 
+          className="col s12 center-align"
+          style={{
+            color:"#FF8802",
+            textShadow:" 0 1px 1px white"
+          }}
+          >
             <h4>
-              <b>Foodbook:</b> Collect, share and search your favourite {" "}
+            <span style={{ fontFamily: "monospace",  color:"#FF8802" }}>FoodBook </span>!
+               Collect, share and search your favourite {" "}
               <span style={{ fontFamily: "monospace" }}>RECIPES</span>!
             </h4>
-            <p className="flow-text grey-text text-darken-1">
+            <p style={{
+            color:"WHITE"
+            , textShadow:" 0 1px 1px #FF8802"
+          }}>
               LOG IN or Register to start connecting with your favourite chefs!
             </p>
             <br />
@@ -21,7 +31,7 @@ class Landing extends Component {
                   width: "140px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
-                  backgroundColor:"#3C5A98",
+                  backgroundColor:"#FF8802",
                   color:"white"
                 }}
                 className="btn btn-large waves-effect waves-light hoverable accent-3"
@@ -36,7 +46,7 @@ class Landing extends Component {
                   width: "140px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
-                  backgroundColor:"#3C5A98",
+                  backgroundColor:"#FF8802",
                   color:"white"
                 }}
                 className="btn btn-large btn-flat waves-effect "

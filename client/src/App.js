@@ -14,6 +14,7 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 
+import foodBackground from './stylesheets/foodBackground.jpg'
 import "./stylesheets/App.css";
 
 // Check for token to keep user logged in
@@ -38,9 +39,9 @@ if (localStorage.jwtToken) {
 class App extends Component {
   render() {
     return (
+      <div className="App" style={{ backgroundImage:`url(${foodBackground})` }}>
       <Provider store={store}>
-        <Router>
-          <div className="App">
+        <Router> 
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
@@ -48,9 +49,9 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
-          </div>
         </Router>
       </Provider>
+      </div>
     );
   }
 }

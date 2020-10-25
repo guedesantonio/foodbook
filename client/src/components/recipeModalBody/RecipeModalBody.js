@@ -20,18 +20,18 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
   return (
     <>
       {loading === false ? (
-        <div style={{ backgroundColor: "#FC8102", color: "white" }}>
-          <ModalHeader toggle={toggle}><h1>{recipeInfo.title}</h1></ModalHeader>
+        <div style={{ backgroundColor: "#FF8802", color: "white" }}>
+          <ModalHeader toggle={toggle}><h5>{recipeInfo.title}</h5></ModalHeader>
           <ModalBody   >
             <Row xs="1">
               <img src={recipeInfo.image} className="recipeImage" alt="Pasta Vegetable Soup" title="Pasta Vegetable Soup" />
             </Row>
             <Row xs="1">
-              <Button color="success" onClick={toggle1} style={{ marginBottom: '1rem' }}>Summary</Button>
+              <Button outline color="warning" onClick={toggle1} style={{ marginBottom: '1rem', color: "white" }}>Summary</Button>
               <Collapse isOpen={isOpen}>
                 <Card>
                   <CardBody>
-                    <div className="summary panel" style={{ backgroundColor: "#FC8102" }}>
+                    <div className="summary panel" style={{ backgroundColor: "#FF8802" }}>
                       {recipeInfo.summary}
                     </div>
                   </CardBody>
@@ -39,11 +39,11 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
               </Collapse>
             </Row>
             <Row xs="1">
-              <Button color="success" onClick={toggle2} style={{ marginBottom: '1rem' }}>Ingredients</Button>
+              <Button outline color="warning" onClick={toggle2} style={{ marginBottom: '1rem', color: "white" }}>Ingredients</Button>
               <Collapse isOpen={isOpen2}>
                 <Card>
                   <CardBody>
-                    <div className="summary panel" style={{ backgroundColor: "#FC8102" }}>
+                    <div className="summary panel" style={{ backgroundColor: "#FF8802" }}>
                       <ol>
                         {recipeInfo.extendedIngredients && recipeInfo.extendedIngredients.map(ingredient => (
                           <li key={ingredient.name}>
@@ -57,12 +57,12 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
               </Collapse>
             </Row>
             <Row xs="1">
-              <Button color="success" onClick={toggle3} style={{ marginBottom: '1rem' }}>Instructions</Button>
+              <Button outline color="warning" onClick={toggle3} style={{ marginBottom: '1rem', color: "white" }}>Instructions</Button>
               <Collapse isOpen={isOpen3}>
                 <Card>
                   <CardBody>
-                    <div className="summary panel" style={{ backgroundColor: "#FC8102" }}>
-                      <div className="summary panel" style={{ backgroundColor: "rgba(128, 0, 128, 0.11)" }}>
+                    <div className="summary panel" style={{ backgroundColor: "#FF8802" }}>
+                      <div className="summary panel" style={{ backgroundColor: "#FF8802" }}>
                         {recipeInfo.instructions}
                       </div>
                     </div>
@@ -72,15 +72,15 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
             </Row>
           </ModalBody>
           <ModalFooter>
-            <Button color="success" >Save</Button>{' '}
-            <Button color="secondary" onClick={toggle}>Close</Button>
+            <Button outline color="warning" >Save</Button>{' '}
+            <Button outline color="warning" onClick={toggle}>Close</Button>
           </ModalFooter>
 
         </div>
       ) : (
           <div className="center" style={{ padding: "500px 0px 500px 0px" }}>
             <Spinner color="dark" />
-        L O A D I N G
+          L O A D I N G
           </div>
         )}
     </>

@@ -8,7 +8,7 @@ class ProfileRecipeList extends React.Component {
 
   render(){
     return(
-      <Card style={{ backgroundColor: "#3C5A98", color: "white" }}>
+      <Card style={{ backgroundColor: "#FF8802", color: "white" }}>
         <Container className="themed-container" fluid={true}>
         </Container>
             <RecipeList recipes={""} btnType={"Delete"}/>

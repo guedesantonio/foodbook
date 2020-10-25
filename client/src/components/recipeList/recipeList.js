@@ -12,7 +12,7 @@ class RecipeList extends React.Component {
                 {recipes && recipes.map(recipe => (
                     <ListGroupItem
                         key={recipe.id}
-                        style={{ backgroundColor: "#3C5A98" }}
+                        style={{ backgroundColor: "#FF8802" }}
                     >
                         <Container className="themed-container" fluid={true}>
                             <Row xs="3">
@@ -43,7 +43,7 @@ class RecipeList extends React.Component {
                                             width: "70px",
                                             borderRadius: "3px",
                                             letterSpacing: "1.5px",
-                                            backgroundColor: "#3C5A98",
+                                            backgroundColor: "#FF8802",
                                             color: "white"
                                         }}
                                         >

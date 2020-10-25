@@ -26,14 +26,14 @@ class SearchList extends React.Component {
 
   render(){
     return(
-      <Card style={{ backgroundColor: "#3C5A98", color: "white" }}>
+      <Card style={{ backgroundColor: "#FF8802", color: "white" }}>
         <Container className="themed-container" fluid={true}>
           <Form
-                style={{ padding: "20px" }}
+                style={{ padding: "20px",color:"white" }}
                 onSubmit={ this.handleSubmit }
               >
-            <FormGroup >
-              <Label for="exampleSearch">Search Recipe</Label>
+            <FormGroup  style={{ color: "white" }}>
+              <Label for="exampleSearch"  style={{ color: "white" }}>Search Recipe</Label>
               <Input
                 onChange={ this.inputRecipeNameChange }
                 style={{ color: "white" }}
@@ -46,7 +46,7 @@ class SearchList extends React.Component {
                 width: "140px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                backgroundColor: "#3C5A98",
+                backgroundColor: "#FF8802",
                 borderColor: "white",
                 color: "white"
               }}>Search</Button>

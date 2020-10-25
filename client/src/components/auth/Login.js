@@ -46,16 +46,27 @@ return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
+            <Link to="/" className="btn-flat waves-effect"
+            style={{
+              color:"WHITE"
+              , textShadow:" 0 1px 1px #FF8802"
+            }}>
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
+              <h4 style={{
+            color:"WHITE"
+            , textShadow:" 0 1px 1px #FF8802"
+          }}>
                 <b>Login</b> below
               </h4>
-              <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
+              <p 
+              style={{
+                color:"#FF8802"
+                , textShadow:" 0 1px 1px WHITE"}}
+              >
+                Don't have an account? <Link to="/register" >Register</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -70,7 +81,8 @@ return (
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" style={{
+            color:"WHITE"}}>Email</label>
                 <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
@@ -87,7 +99,8 @@ return (
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" style={{
+            color:"WHITE"}}>Password</label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
@@ -100,7 +113,7 @@ return (
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     marginTop: "1rem",
-                    backgroundColor:"#3C5A98",
+                    backgroundColor:"#FF8802",
                     color:"white"
                   }}
                   type="submit"

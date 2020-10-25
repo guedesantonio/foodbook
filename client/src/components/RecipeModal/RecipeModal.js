@@ -1,7 +1,7 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React, { useState, useEffect } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal } from 'reactstrap';
 import "./modal.css";
 import RecipeService from "../../services/RecipeService";
 import RecipeModalBody from '../recipeModalBody/RecipeModalBody';
@@ -25,7 +25,7 @@ const RecipeModal = (props) => {
                     width: "70px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
-                    backgroundColor: "#3C5A98",
+                    backgroundColor: "#FF8802",
                     color: "white"
                 }}
                 onClick={toggle}>
