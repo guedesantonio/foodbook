@@ -19,7 +19,7 @@ const User = require('../../models/User');
 // @access Public
 // eslint-disable-next-line consistent-return
 router.post('/register', (req, res) => {
-// Form validation
+  // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
   // Check validation
   if (!isValid) {
@@ -35,7 +35,7 @@ router.post('/register', (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-      // Hash password before saving in database
+    // Hash password before saving in database
     bcrypt.genSalt(10, (_err, salt) => {
       bcrypt.hash(newUser.password, salt, (err, hash) => {
         if (err) throw err;
@@ -55,7 +55,7 @@ router.post('/register', (req, res) => {
 // @access Public
 // eslint-disable-next-line consistent-return
 router.post('/login', (req, res) => {
-// Form validation
+  // Form validation
   const { errors, isValid } = validateLoginInput(req.body);
   // Check validation
   if (!isValid) {
@@ -103,4 +103,12 @@ router.post('/login', (req, res) => {
     });
   });
 });
+
+router.put('/recipe/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, { $push: { recipes: req.body } }).then((user) => {
+    res.json(user)
+  });
+});
+
+
 module.exports = router;

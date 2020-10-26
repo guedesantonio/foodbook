@@ -21,7 +21,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
     <>
       {loading === false ? (
         <div style={{ backgroundColor: "#FF8802", color: "white" }}>
-          <ModalHeader toggle={toggle}><h5>{recipeInfo.title}</h5></ModalHeader>
+          <ModalHeader toggle={toggle}><p style={{fontSize:"30px", fontFamily:"roboto"}}>{recipeInfo.title}</p></ModalHeader>
           <ModalBody   >
             <Row xs="1">
               <img src={recipeInfo.image} className="recipeImage" alt="Pasta Vegetable Soup" title="Pasta Vegetable Soup" />
@@ -72,7 +72,6 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
             </Row>
           </ModalBody>
           <ModalFooter>
-            <Button outline color="warning" >Save</Button>{' '}
             <Button outline color="warning" onClick={toggle}>Close</Button>
           </ModalFooter>
 

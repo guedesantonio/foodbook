@@ -26,7 +26,8 @@ const RecipeModal = (props) => {
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     backgroundColor: "#FF8802",
-                    color: "white"
+                    color: "white",
+                    borderColor: "white"
                 }}
                 onClick={toggle}>
                 {buttonLabel}

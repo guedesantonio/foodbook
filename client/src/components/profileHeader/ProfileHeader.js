@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import {
-    Card, CardText, CardBody,
-    CardTitle
+    Card, CardBody,
+    Row, Container, Button
 } from 'reactstrap';
+import DescriptionBox from "../DescriptionBox/DescriptionBox";
 
 class ProfileHeader extends Component {
 
@@ -21,28 +22,31 @@ class ProfileHeader extends Component {
                     <div className="col s12 center-align">
                         <Card style={{ backgroundColor: "#FF8802", color: "white" }}>
                             <CardBody>
-                                <CardTitle>
-                                    <h4>
-                                        <b>Welcome</b> {user.name.split(" ")[0]}!
-                                    </h4>
-                                </CardTitle>
-                                <CardText>Search your favourite recipes and save them to your FoodBook!</CardText>
-                                <button
-                            style={{
-                                width: "150px",
-                                borderRadius: "3px",
-                                borderColor:"white",
-                                letterSpacing: "1.5px",
-                                marginTop: "1rem",
-                                backgroundColor: "#FF8802",
-                                color: "white",
-
-                            }}
-                            onClick={this.onLogoutClick}
-                            className="btn btn-large waves-effect waves-light hoverable accent-3"
-                        >
-                            Logout
-                    </button>
+                            <Row>
+                                <h4>
+                                    <b>Welcome</b> {user.name.split(" ")[0]}!
+                                </h4>
+                            </Row>
+                            <Row>
+                                <Container>
+                                    <DescriptionBox/>
+                                </Container>
+                            </Row>
+                            <Row>
+                                <Button
+                                    style={{
+                                        width: "140px",
+                                        borderRadius: "3px",
+                                        letterSpacing: "1.5px",
+                                        backgroundColor: "#FF8802",
+                                        borderColor: "white",
+                                        color: "white"
+                                    }}
+                                    onClick={this.onLogoutClick}
+                                >
+                                    Logout
+                                </Button>
+                            </Row>
                             </CardBody>
                         </Card>
                         <p>{JSON.stringify(user)}</p>

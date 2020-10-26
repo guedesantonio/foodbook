@@ -23,6 +23,9 @@ class SearchList extends React.Component {
     this.setState({ inputRecipeName: '',recipeList: recipeObject.results});
   }
   
+  saveRecipe = (recipe)=> {
+    console.log("hELLO")
+  }
 
   render(){
     return(
@@ -52,7 +55,7 @@ class SearchList extends React.Component {
               }}>Search</Button>
           </Form>
         </Container>
-            <RecipeList recipes={this.state.recipeList} btnType={"Save"}/>
+            <RecipeList recipes={this.state.recipeList} btnType={"Save"} saveRecipe={this.saveRecipe}/>
       </Card>
     );
   };

@@ -5,11 +5,9 @@ import RecipeModal from '../RecipeModal/RecipeModal';
 class RecipeList extends React.Component {
 
     render() {
-        const recipes = this.props.recipes;
-        const btnType = this.props.btnType;
         return (
             <ListGroup >
-                {recipes && recipes.map(recipe => (
+                {this.props.recipes && this.props.recipes.map(recipe => (
                     <ListGroupItem
                         key={recipe.id}
                         style={{ backgroundColor: "#FF8802" }}
@@ -18,7 +16,7 @@ class RecipeList extends React.Component {
                             <Row xs="3">
                                 <Col>
                                     <img
-                                        style={{ maxHeight: "150px", maxWidth: "150px" }}
+                                        style={{ maxHeight: "170px", maxWidth: "170px" }}
                                         src={recipe.image}
                                         className="card-img"
                                         alt={recipe.title}
@@ -26,7 +24,7 @@ class RecipeList extends React.Component {
 
                                 </Col>
                                 <Col>
-                                    <h4>{recipe.title}</h4>
+                                    <p>{recipe.title}</p>
                                 </Col>
                                 <Col>
                                     <RecipeModal
@@ -44,10 +42,14 @@ class RecipeList extends React.Component {
                                             borderRadius: "3px",
                                             letterSpacing: "1.5px",
                                             backgroundColor: "#FF8802",
-                                            color: "white"
+                                            color: "white",
+                                            borderColor:"white"
                                         }}
+                                        onClick={() => this.props.saveRecipe(recipe)}
                                         >
-                                        {btnType}
+                                            {/* axios.put("/api/user/recipe/" + userId, recipe).then(
+                                            ) */}
+                                        {this.props.btnType}
                                       </Button>
                                 </Col>
                             </Row>

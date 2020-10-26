@@ -11,6 +11,7 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true
   },
   password: {
     type: String,
@@ -25,7 +26,8 @@ const UserSchema = new Schema({
     default: ""
   },
   recipes: {
-    type: Array
+    type: Array,
+    default: []
   }
 });
 // eslint-disable-next-line no-multi-assign

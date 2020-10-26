@@ -38,7 +38,6 @@ const ProfileTab = (props) => {
         <TabPane tabId="1">
           <Row>
             <Col sm="12">
-              <RecipeModal/>
               <SearchList/>
             </Col>
           </Row>
