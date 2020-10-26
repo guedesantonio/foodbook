@@ -29,12 +29,12 @@ class ProfileHeader extends Component {
         return (
             <div style={{paddingTop:"40px"}}>
                 <div className="row">
-                    <div className="col s12 center-align">
-                        <Card style={{ backgroundColor: "#FF8802", color: "white" }}>
+                    <Container className="themed-container" fluid={true}>
+                        <Card style={{ backgroundColor: "#FF8802", color: "white",padding:"15px"}}>
                             <CardBody>
                             <Row>
                                 <h4>
-                                    <b>Welcome</b> {user.name.split(" ")[0]}!
+                                 {user.name.split(" ")[0]}
                                 </h4>
                             </Row>
                             <Row>
@@ -59,7 +59,7 @@ class ProfileHeader extends Component {
                             </Row>
                             </CardBody>
                         </Card>
-                    </div>
+                    </Container>
                 </div>
             </div>
         );

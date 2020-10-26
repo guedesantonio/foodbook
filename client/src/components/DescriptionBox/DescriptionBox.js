@@ -20,8 +20,7 @@ export default class DescriptionBox extends Component {
           },
           rows: 5
         }}
-        value="How do you define real? If you're talking about what you can feel, what you can smell,\
-        what you can taste and see, then real is simply electrical signals interpreted by your brain"
+        value='Not another flipping cooking show!'  
         onSave={this.onSave}
       />
     )

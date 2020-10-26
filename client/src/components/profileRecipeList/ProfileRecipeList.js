@@ -9,9 +9,7 @@ function ProfileRecipeList(props) {
 
     return(
       <Card style={{ backgroundColor: "#FF8802", color: "white" }}>
-        <Container className="themed-container" fluid={true}>
-        </Container>
-            <RecipeList recipes={props.recipeList} btnType={"Delete"}/>
+          <RecipeList recipes={props.recipeList} btnType={"Delete"}/>
       </Card>
     );
 }

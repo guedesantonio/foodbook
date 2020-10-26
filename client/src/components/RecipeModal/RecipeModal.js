@@ -22,7 +22,7 @@ const RecipeModal = (props) => {
         <div >
             <Button
                 style={{
-                    width: "70px",
+                    width: "90px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     backgroundColor: "#FF8802",
