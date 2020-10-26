@@ -1,7 +1,10 @@
 import React from 'react';
 import { Card, Form, FormGroup, Label, Input, Button, Container} from 'reactstrap';
 import RecipeService from "../../services/RecipeService";
-import RecipeList from "../recipeList/recipeList"
+import RecipeList from "../recipeList/recipeList";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import axios from "axios";
 
 
 class SearchList extends React.Component {
@@ -11,6 +14,7 @@ class SearchList extends React.Component {
     recipeList: []
   }
   
+  userId = this.props.auth.user.id
 
   inputRecipeNameChange = (e)=> {
     this.setState({ inputRecipeName: e.target.value });
@@ -24,7 +28,9 @@ class SearchList extends React.Component {
   }
   
   saveRecipe = (recipe)=> {
-    console.log("hELLO")
+    axios.put("/api/users/recipe/" + this.userId, recipe).then(
+      console.log("Recipe inserted")
+    )
   }
 
   render(){
@@ -61,4 +67,14 @@ class SearchList extends React.Component {
   };
 }
 
-export default SearchList;
+SearchList.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps
+)(SearchList);

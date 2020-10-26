@@ -47,8 +47,6 @@ class RecipeList extends React.Component {
                                         }}
                                         onClick={() => this.props.saveRecipe(recipe)}
                                         >
-                                            {/* axios.put("/api/user/recipe/" + userId, recipe).then(
-                                            ) */}
                                         {this.props.btnType}
                                       </Button>
                                 </Col>
