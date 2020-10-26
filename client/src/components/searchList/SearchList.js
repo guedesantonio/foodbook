@@ -15,6 +15,7 @@ class SearchList extends React.Component {
   }
   
   userId = this.props.auth.user.id
+  onRecipeSave = this.props.onRecipeSave
 
   inputRecipeNameChange = (e)=> {
     this.setState({ inputRecipeName: e.target.value });
@@ -27,10 +28,12 @@ class SearchList extends React.Component {
     this.setState({ inputRecipeName: '',recipeList: recipeObject.results});
   }
   
-  saveRecipe = (recipe)=> {
-    axios.put("/api/users/recipe/" + this.userId, recipe).then(
+  saveRecipe = (recipe) => {
+    const onRecipeSave = this.onRecipeSave
+    axios.put("/api/users/recipe/" + this.userId, recipe).then(() => {
       console.log("Recipe inserted")
-    )
+      onRecipeSave()
+    })
   }
 
   render(){
@@ -71,7 +74,7 @@ SearchList.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth
 });
 

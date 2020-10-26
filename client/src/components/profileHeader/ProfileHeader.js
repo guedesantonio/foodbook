@@ -7,6 +7,7 @@ import {
     Row, Container, Button
 } from 'reactstrap';
 import DescriptionBox from "../DescriptionBox/DescriptionBox";
+import axios from "axios";
 
 class ProfileHeader extends Component {
 
@@ -14,6 +15,15 @@ class ProfileHeader extends Component {
         e.preventDefault();
         this.props.logoutUser();
     };
+
+    userId = this.props.auth.user.id
+
+    saveDescription = (recipe)=> {
+        // axios.put("/api/users/description/" + this.userId, recipe).then(
+          console.log("Description inserted")
+        // )
+      }
+
     render() {
         const { user } = this.props.auth;
         return (
@@ -29,7 +39,7 @@ class ProfileHeader extends Component {
                             </Row>
                             <Row>
                                 <Container>
-                                    <DescriptionBox/>
+                                    <DescriptionBox saveDescription={this.saveDescription}/>
                                 </Container>
                             </Row>
                             <Row>
@@ -49,7 +59,6 @@ class ProfileHeader extends Component {
                             </Row>
                             </CardBody>
                         </Card>
-                        <p>{JSON.stringify(user)}</p>
                     </div>
                 </div>
             </div>

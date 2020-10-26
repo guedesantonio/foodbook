@@ -78,7 +78,7 @@ router.post('/login', (req, res) => {
         // Create JWT Payload
         const payload = {
           id: user.id,
-          name: user.name,
+          name: user.name
         };
         // Sign token
         jwt.sign(
@@ -110,5 +110,16 @@ router.put('/recipe/:id', (req, res) => {
   });
 });
 
+router.put('/description/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, { $set: { name: req.body }}).then((user) => {
+    res.json(user)
+  });
+});
+
+router.get('/recipes/:id', (req, res) => {
+  User.findById(req.params.id).then((user) => {
+    res.json(user.recipes)
+  });
+});
 
 module.exports = router;
