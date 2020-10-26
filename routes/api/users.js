@@ -110,6 +110,18 @@ router.put('/recipe/:id', (req, res) => {
   });
 });
 
+router.delete('/recipe/:id/:recipeId', (req, res) => {
+  User.findByIdAndUpdate(
+    req.params.id, 
+    { $pull:  { "recipes": { id: Number(req.params.recipeId)} } },
+    { new: true },
+    function(err, data) {
+    }  
+    ).then((user) => {
+    res.json(user)
+  });
+});
+
 router.put('/description/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, { $set: { name: req.body }}).then((user) => {
     res.json(user)

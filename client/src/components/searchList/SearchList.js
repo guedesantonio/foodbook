@@ -64,7 +64,7 @@ class SearchList extends React.Component {
               }}>Search</Button>
           </Form>
         </Container>
-            <RecipeList recipes={this.state.recipeList} btnType={"Save"} saveRecipe={this.saveRecipe}/>
+            <RecipeList recipes={this.state.recipeList} btnType={"Save"} SaveOrDeleteRecipe={this.saveRecipe}/>
       </Card>
     );
   };

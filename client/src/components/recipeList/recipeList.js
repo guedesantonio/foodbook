@@ -45,7 +45,7 @@ class RecipeList extends React.Component {
                                             color: "white",
                                             borderColor:"white"
                                         }}
-                                        onClick={() => this.props.saveRecipe(recipe)}
+                                        onClick={() => this.props.SaveOrDeleteRecipe(recipe)}
                                         >
                                         {this.props.btnType}
                                       </Button>

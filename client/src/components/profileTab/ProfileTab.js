@@ -55,7 +55,7 @@ const ProfileTab = (props) => {
         <TabPane tabId="1">
           <Row>
             <Col sm="12">
-              <ProfileRecipeList recipeList={recipeList}/>
+              <ProfileRecipeList recipeList={recipeList} onRecipeDelete={getUserRecipes}/>
             </Col>
           </Row>
         </TabPane>
