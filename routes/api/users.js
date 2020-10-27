@@ -123,7 +123,7 @@ router.delete('/recipe/:id/:recipeId', (req, res) => {
 });
 
 router.put('/description/:id', (req, res) => {
-  User.findByIdAndUpdate(req.params.id, { $set: { name: req.body }}).then((user) => {
+  User.findByIdAndUpdate(req.params.id, { $set: { description: req.body.description }}).then((user) => {
     res.json(user)
   });
 });

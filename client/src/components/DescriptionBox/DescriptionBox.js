@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import EdiText from 'react-editext'
+import axios from "axios";
 
-export default class DescriptionBox extends Component {
-  onSave = val => {
-    console.log('Edited Value -> ', val)
+const DescriptionBox = (props) => {
+  const onSave = val => {
+    console.log('Edited Value -> ', val);
+    axios.put("/api/users/description/" + props.userId, {description: val}).then(() => {
+      console.log("Description inserted")
+    })
   }
-
-  render() {
     return (
       <EdiText
         type='textarea'
@@ -21,8 +23,9 @@ export default class DescriptionBox extends Component {
         }}
         value="How do you define real? If you're talking about what you can feel, what you can smell,
         what you can taste and see, then real is simply electrical signals interpreted by your brain"
-        onSave={this.onSave}
+        onSave={onSave}
       />
     )
-  }
 }
+
+export default DescriptionBox 

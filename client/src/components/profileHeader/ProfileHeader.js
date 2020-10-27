@@ -18,12 +18,6 @@ class ProfileHeader extends Component {
 
     userId = this.props.auth.user.id
 
-    saveDescription = (recipe)=> {
-        // axios.put("/api/users/description/" + this.userId, recipe).then(
-          console.log("Description inserted")
-        // )
-      }
-
     render() {
         const { user } = this.props.auth;
         return (
@@ -39,7 +33,7 @@ class ProfileHeader extends Component {
                             </Row>
                             <Row>
                                 <Container>
-                                    <DescriptionBox saveDescription={this.saveDescription}/>
+                                    <DescriptionBox userId={user.id} />
                                 </Container>
                             </Row>
                             <Row>
