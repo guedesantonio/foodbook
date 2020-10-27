@@ -43,7 +43,7 @@ const RecipeList = (props) => {
                                 </RecipeModal>
                                 <Button
                                     style={{
-                                        width: "90px",
+                                        width: "95px",
                                         borderRadius: "3px",
                                         letterSpacing: "1.5px",
                                         backgroundColor: "#FF8802",
