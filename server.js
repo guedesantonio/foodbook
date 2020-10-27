@@ -17,6 +17,11 @@ app.use(bodyParser.json());
 // DB Config
 const db = require('./config/keys').mongoURI;
 // Connect to MongoDB
+// mongoose
+//   .connect(
+//     db,
+//     { useNewUrlParser: true }
+//   )
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
   {
@@ -37,7 +42,7 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 
 const PORT = process.env.PORT || 5000;
-app.get('*', (req, res) => res.sendFile(path.join(__dirname + '/client/build/index.html')));
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 app.listen(PORT, () =>
   console.log(`:earth_americas:  ==> API Server now listening on PORT ${PORT}!`)
 );
