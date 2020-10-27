@@ -128,6 +128,12 @@ router.put('/description/:id', (req, res) => {
   });
 });
 
+router.get('/description/:id', (req, res) => {
+  User.findById(req.params.id).then((user) => {
+    res.json(user.description)
+  });
+});
+
 router.get('/recipes/:id', (req, res) => {
   User.findById(req.params.id).then((user) => {
     res.json(user.recipes)

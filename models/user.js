@@ -23,7 +23,7 @@ const UserSchema = new Schema({
   },
   description: {
     type: String,
-    default: ""
+    default: "Add a description here!"
   },
   recipes: {
     type: Array,

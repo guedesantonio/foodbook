@@ -18,7 +18,6 @@ const ProfileTab = (props) => {
 
   const getUserRecipes = () => {
     axios.get("/api/users/recipes/" + props.auth.user.id).then( (res) => {
-      console.log(res.datanpm )
       setrecipeList(res.data)
     }
     )
