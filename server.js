@@ -42,6 +42,11 @@ require('./config/passport')(passport);
 // Routes
 app.use('/api/users', users);
 
+if (process.env.NODE_ENV === 'production') {
+  // Exprees will serve up production assets
+  app.use(express.static('client/build'));
+}
+
 const PORT = process.env.PORT || 5000;
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 app.listen(PORT, () =>
