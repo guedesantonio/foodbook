@@ -38,7 +38,7 @@
     ```
     npm start
     ```
-  This app has also been deployed online, please click [here](https://guedesantonio.github.io/swipe-jobs-app/) and start using it.
+  This app has also been deployed online, please click [here](https://guedesantonio-foodbook.herokuapp.com/) and start using it.
 
   ## Usage
   
