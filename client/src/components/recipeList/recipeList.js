@@ -1,62 +1,68 @@
-import React from 'react';
+import React, { useState , useEffect } from 'react';
 import { ListGroup, ListGroupItem, Button, Container, Row, Col } from 'reactstrap';
 import RecipeModal from '../RecipeModal/RecipeModal';
+import { useAlert } from 'react-alert'
 
-class RecipeList extends React.Component {
+const RecipeList = (props) => {
 
-    render() {
-        return (
-            <ListGroup >
-                {this.props.recipes && this.props.recipes.map(recipe => (
-                    <ListGroupItem
-                        key={recipe.id}
-                        style={{ backgroundColor: "#FF8802" }}
-                    >
-                        <Container className="themed-container" fluid={true}>
-                            <Row xs="3">
-                                <Col>
-                                    <img
-                                        style={{ maxHeight: "170px", maxWidth: "170px" }}
-                                        src={recipe.image}
-                                        className="card-img"
-                                        alt={recipe.title}
-                                    />
+    const [buttonState, setButtonState] = useState("");
+    // const disableButton = () => {
+    //    setButtonState("d-none")
+    //   }
+    const alert = useAlert();
+    return (
+        <ListGroup >
+            {props.recipes && props.recipes.map(recipe => (
+                <ListGroupItem
+                    key={recipe.id}
+                    style={{ backgroundColor: "#FF8802" }}
+                >
+                    <Container className="themed-container" fluid={true}>
+                        <Row xs="3">
+                            <Col>
+                                <img
+                                    style={{ maxHeight: "170px", maxWidth: "170px" }}
+                                    src={recipe.image}
+                                    className="card-img"
+                                    alt={recipe.title}
+                                />
 
-                                </Col>
-                                <Col>
-                                    <p>{recipe.title}</p>
-                                </Col>
-                                <Col>
-                                    <RecipeModal
-                                    buttonLabel="View"
-                                    title=""
-                                    image=""
-                                    recipe=""
-                                    ID={recipe.id}
+                            </Col>
+                            <Col>
+                                <p>{recipe.title}</p>
+                            </Col>
+                            <Col>
+                                <RecipeModal
+                                buttonLabel="View"
+                                title=""
+                                image=""
+                                recipe=""
+                                ID={recipe.id}
+                                >
+                                View
+                                </RecipeModal>
+                                <Button
+                                    style={{
+                                        width: "90px",
+                                        borderRadius: "3px",
+                                        letterSpacing: "1.5px",
+                                        backgroundColor: "#FF8802",
+                                        color: "white",
+                                        borderColor:"white"
+                                    }}
+                                    onClick={() =>  {props.SaveOrDeleteRecipe(recipe); 
+                                        alert.show(<div style={{ color: '#FF8802' }}>Recipe {props.btnType}d!</div>
+                                    )}}
                                     >
-                                    View
-                                    </RecipeModal>
-                                    <Button
-                                        style={{
-                                            width: "90px",
-                                            borderRadius: "3px",
-                                            letterSpacing: "1.5px",
-                                            backgroundColor: "#FF8802",
-                                            color: "white",
-                                            borderColor:"white"
-                                        }}
-                                        onClick={() => this.props.SaveOrDeleteRecipe(recipe)}
-                                        >
-                                        {this.props.btnType}
-                                      </Button>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </ListGroupItem>
-                ))}
-            </ListGroup>
-        );
-    };
+                                    {props.btnType}
+                                    </Button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </ListGroupItem>
+            ))}
+        </ListGroup>
+    );
 }
 
 export default RecipeList;
