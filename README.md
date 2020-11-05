@@ -7,7 +7,7 @@
 
   ![img](./image/mern.jpeg)
 
-  Foodbook is a MERN application that uses REDUX for state management and allows users to search for their favorite recipes. The users also can view more information about the recipes and save them to their personal profile page.
+  Foodbook is a MERN application that uses REDUX for state management and allows users to search for their favorite recipes. The users also can view more information about the recipes and save them to their personal recipe book.
 
   ## Table of contents
   
