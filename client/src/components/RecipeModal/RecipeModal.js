@@ -21,13 +21,15 @@ const RecipeModal = (props) => {
     return (
         <div >
             <Button
+            className="btn btn-large waves-effect waves-light hoverable accent-3"
                 style={{
                     width: "95px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     backgroundColor: "#FF8802",
                     color: "white",
-                    borderColor: "white"
+                    borderColor: "white",
+                    margin: "5px"
                 }}
                 onClick={toggle}>
                 {buttonLabel}

@@ -29,11 +29,16 @@ const ProfileTab = (props) => {
 
   
   return (
-    <Card style={{backgroundColor:"#FF8802", color:"white"}}>
+    <Card 
+    style={{
+      backgroundColor:"#FF8802", 
+      color:"white",
+      boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)",
+      }}>
       <Nav tabs>
         <NavItem>
           <NavLink
-            style={{color:"white",fontWeight:"500",textShadow:" 0px 2px 2px #FF8802 "}}
+            style={{color:"white",fontWeight:"500",textShadow:" 1px 2px 2px BLACK "}}
             className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }}
           >
@@ -42,7 +47,7 @@ const ProfileTab = (props) => {
         </NavItem>
         <NavItem >
           <NavLink 
-            style={{color:"white",fontWeight:"500",textShadow:" 0px 2px 2px #FF8802 "}}
+            style={{color:"white",fontWeight:"500",textShadow:" 1px 2px 2px BLACK "}}
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
           >

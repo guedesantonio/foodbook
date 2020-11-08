@@ -21,7 +21,11 @@ const RecipeList = (props) => {
                         <Row xs="3">
                             <Col>
                                 <img
-                                    style={{ maxHeight: "170px", maxWidth: "170px" }}
+                                    style={{ 
+                                        maxHeight: "170px", 
+                                        maxWidth: "170px",
+                                        boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)"
+                                    }}
                                     src={recipe.image}
                                     className="card-img"
                                     alt={recipe.title}
@@ -29,7 +33,14 @@ const RecipeList = (props) => {
 
                             </Col>
                             <Col>
-                                <p>{recipe.title}</p>
+                                <h4
+                                style={{
+                                    color:"white",
+                                    textShadow:" 0 2px 2px black",
+                                    paddingTop: "50px"
+                                }}
+
+                                >{recipe.title}</h4>
                             </Col>
                             <Col>
                                 <RecipeModal
@@ -48,8 +59,10 @@ const RecipeList = (props) => {
                                         letterSpacing: "1.5px",
                                         backgroundColor: "#FF8802",
                                         color: "white",
-                                        borderColor:"white"
+                                        borderColor:"white",
+                                        margin: "5px"
                                     }}
+                                    className="btn btn-large waves-effect waves-light hoverable accent-3"
                                     onClick={() =>  {props.SaveOrDeleteRecipe(recipe); 
                                         alert.show(<div style={{ color: '#FF8802' }}>Recipe {props.btnType}d!</div>
                                     )}}

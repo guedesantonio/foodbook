@@ -54,6 +54,7 @@ class SearchList extends React.Component {
                 placeholder="Type Recipe Name Here" />
             </FormGroup>
             <Button
+              className="btn btn-large waves-effect waves-light hoverable accent-3"
               style={{
                 width: "140px",
                 borderRadius: "3px",

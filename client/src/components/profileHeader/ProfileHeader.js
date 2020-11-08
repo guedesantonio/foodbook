@@ -37,7 +37,7 @@ class ProfileHeader extends Component {
                                 <h4
                                 style={{
                                     color:"white",
-                                    textShadow:" 0 2px 2px black"
+                                    textShadow:" 0 2px 2px black",
                                   }}>
                                  {user.name.split(" ")[0]}
                                 </h4>
