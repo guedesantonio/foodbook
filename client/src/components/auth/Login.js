@@ -43,7 +43,12 @@ this.props.loginUser(userData); // since we handle the redirect within our compo
 render() {
     const { errors } = this.state;
 return (
-      <div className="container" style={{ backgroundColor: "#FF8802" }}>
+      <div className="container" style={{ 
+        height: "45vh", width:"85vw", 
+        backgroundColor: "#FF8802", 
+        marginTop: "350px",
+        boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)"
+         }}>
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect"
@@ -57,14 +62,14 @@ return (
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4 style={{
             color:"WHITE"
-            , textShadow:" 0 1px 1px #FF8802"
+            , textShadow:" 0 2px 2px black"
           }}>
                 <b>Login</b> below
               </h4>
               <p 
               style={{
-                color:"#FF8802"
-                , textShadow:" 0 1px 1px WHITE"}}
+                color:"white"
+                , textShadow:" 0 1px 1px black"}}
               >
                 Don't have an account? <Link to="/register" >Register</Link>
               </p>
@@ -81,8 +86,11 @@ return (
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
-                <label htmlFor="email" style={{
-            color:"WHITE"}}>Email</label>
+                <label htmlFor="email" 
+                style={{
+                        color:"WHITE",
+                        textShadow:" 0 1px 1px black"
+                        }}>Email</label>
                 <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
@@ -99,8 +107,11 @@ return (
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password" style={{
-            color:"WHITE"}}>Password</label>
+                <label htmlFor="password" 
+                  style={{
+                    color:"WHITE",
+                    textShadow:" 0 1px 1px black"
+                      }}>Password</label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
@@ -114,7 +125,8 @@ return (
                     letterSpacing: "1.5px",
                     marginTop: "1rem",
                     backgroundColor:"#FF8802",
-                    color:"white"
+                    color:"white",
+                    borderColor: "white",
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable accent-3"
