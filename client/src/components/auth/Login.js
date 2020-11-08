@@ -43,10 +43,10 @@ this.props.loginUser(userData); // since we handle the redirect within our compo
 render() {
     const { errors } = this.state;
 return (
-      <div className="container" style={{ 
-        height: "45vh", width:"85vw", 
+      <div className="container valign-wrapper justify-content-center" style={{ 
+        height: "45vh", width:"80vw", 
         backgroundColor: "#FF8802", 
-        marginTop: "350px",
+        marginTop: "330px",
         boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)"
          }}>
         <div style={{ marginTop: "4rem" }} className="row">
@@ -54,7 +54,7 @@ return (
             <Link to="/" className="btn-flat waves-effect"
             style={{
               color:"WHITE"
-              , textShadow:" 0 1px 1px #FF8802"
+              , textShadow:" 0 1px 1px black"
             }}>
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
@@ -127,6 +127,7 @@ return (
                     backgroundColor:"#FF8802",
                     color:"white",
                     borderColor: "white",
+                    textShadow:" 0 2px 2px black",
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable accent-3"

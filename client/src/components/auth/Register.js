@@ -44,12 +44,18 @@ componentDidMount() {
 render() {
     const { errors } = this.state;
 return (
-      <div className="container" style={{ backgroundColor: "#FF8802" }}>
+      <div className="container valign-wrapper justify-content-center" 
+      style={{ 
+        height: "65vh", width:"85vw", 
+        backgroundColor: "#FF8802", 
+        marginTop: "230px",
+        boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)",
+        }}>
         <div className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect" style={{
               color:"WHITE"
-              , textShadow:" 0 1px 1px #FF8802"
+              , textShadow:" 0 1px 1px black"
             }}>
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
@@ -58,14 +64,14 @@ return (
               <h4 
               style={{
                 color:"WHITE"
-                , textShadow:" 0 1px 1px #FF8802"
+                , textShadow:" 0 2px 2px black"
               }}
               >
                 <b>Register</b> below
               </h4>
               <p style={{
-                color:"#FF8802"
-                , textShadow:" 0 1px 1px WHITE"}}>
+                color:"white"
+                , textShadow:" 0 2px 2px black"}}>
                 Already have an account? <Link to="/login">Log in</Link>
               </p>
             </div>
@@ -82,7 +88,9 @@ return (
                   })}
                 />
                 <label htmlFor="name" style={{
-            color:"WHITE"}}>Name</label>
+                        color:"WHITE",
+                        textShadow:" 0 1px 1px black"
+                        }}>Name</label>
                 <span className="red-text">{errors.name}</span>
               </div>
               <div className="input-field col s12">
@@ -98,9 +106,9 @@ return (
                 />
                 <label htmlFor="email" 
                 style={{
-            color:"WHITE",  
-            textShadow:" 0 1px 1px #FF8802"}}
-            >Email</label>
+                  color:"WHITE",
+                  textShadow:" 0 1px 1px black"
+                  }}>Email</label>
                 <span className="red-text">{errors.email}</span>
               </div>
               <div className="input-field col s12">
@@ -115,7 +123,9 @@ return (
                   })}
                 />
                 <label htmlFor="password" style={{
-            color:"WHITE"}}>Password</label>
+                        color:"WHITE",
+                        textShadow:" 0 1px 1px black"
+                        }}>Password</label>
                 <span className="red-text">{errors.password}</span>
               </div>
               <div className="input-field col s12">
@@ -132,8 +142,9 @@ return (
                 <label 
                 htmlFor="password2" 
                 style={{
-                color:"WHITE",
-                textShadow:" 0 1px 1px #FF8802"}}>Confirm Password</label>
+                  color:"WHITE",
+                  textShadow:" 0 1px 1px black"
+                  }}>Confirm Password</label>
                 <span className="red-text">{errors.password2}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -144,7 +155,9 @@ return (
                     letterSpacing: "1.5px",
                     marginTop: "1rem",
                     backgroundColor:"#FF8802",
-                    color:"white"
+                    color:"white",
+                    borderColor: "white",
+                    textShadow:" 0 2px 2px black",
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable accent-3"

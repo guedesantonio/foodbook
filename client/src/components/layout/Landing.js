@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import logo from "./foodbook.png";
 class Landing extends Component {
   render() {
     return (
       <div 
       style={{ 
-        height: "30vh", width:"85vw", 
+        height: "35vh", width:"85vw", 
         backgroundColor: "#FF8802", 
-        marginTop: "350px",
-        boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)"
+        marginTop: "330px",
+        padding: "15px",
+        boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)",
       }} 
-        className="container valign-wrapper ">
+        className="container valign-wrapper justify-content-center">
         <div className="row">
           <div 
           className="col s12 center-align"
@@ -20,7 +22,11 @@ class Landing extends Component {
           }}
           >
             <h3>
-            <span style={{ fontFamily: "monospace",  color:"white" }}>FoodBook </span>!
+            <img
+            src={logo}
+            className="logo"
+            alt="googleBooksLogo" />
+              <br/>
                Collect, share and search your favourite {" "}
               <span style={{ fontFamily: "monospace" }}>RECIPES</span>!
             </h3>
