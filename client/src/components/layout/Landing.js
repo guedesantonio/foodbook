@@ -3,23 +3,29 @@ import { Link } from "react-router-dom";
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh",  }} className="container valign-wrapper">
+      <div 
+      style={{ 
+        height: "30vh", width:"85vw", 
+        backgroundColor: "#FF8802", 
+        marginTop: "400px",
+        boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)"
+      }} 
+        className="container valign-wrapper ">
         <div className="row">
           <div 
           className="col s12 center-align"
           style={{
-            color:"#FF8802",
-            textShadow:" 0 1px 1px white"
+            color:"white",
+            textShadow:" 0 2px 2px black"
           }}
           >
-            <h4>
-            <span style={{ fontFamily: "monospace",  color:"#FF8802" }}>FoodBook </span>!
+            <h3>
+            <span style={{ fontFamily: "monospace",  color:"white" }}>FoodBook </span>!
                Collect, share and search your favourite {" "}
               <span style={{ fontFamily: "monospace" }}>RECIPES</span>!
-            </h4>
+            </h3>
             <p style={{
             color:"WHITE"
-            , textShadow:" 0 1px 1px #FF8802"
           }}>
               LOG IN or Register to start connecting with your favourite chefs!
             </p>
@@ -30,6 +36,7 @@ class Landing extends Component {
                 style={{
                   width: "140px",
                   borderRadius: "3px",
+                  borderColor: "white",
                   letterSpacing: "1.5px",
                   backgroundColor:"#FF8802",
                   color:"white"
@@ -46,10 +53,11 @@ class Landing extends Component {
                   width: "140px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
+                  borderColor: "white",
                   backgroundColor:"#FF8802",
                   color:"white"
                 }}
-                className="btn btn-large btn-flat waves-effect "
+                className="btn btn-large waves-effect waves-light hoverable accent-3"
               >
                 Log In
               </Link>
