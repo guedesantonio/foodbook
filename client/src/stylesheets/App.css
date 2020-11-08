@@ -11,5 +11,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 1089px;
+  height: 4500px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

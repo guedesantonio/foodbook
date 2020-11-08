@@ -24,7 +24,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
           <ModalHeader toggle={toggle}><p style={{fontSize:"30px", fontFamily:"roboto"}}>{recipeInfo.title}</p></ModalHeader>
           <ModalBody   >
             <Row xs="1">
-              <img src={recipeInfo.image} className="recipeImage" alt="Pasta Vegetable Soup" title="Pasta Vegetable Soup" />
+              <img src={recipeInfo.image} className="recipeImage" alt={recipeInfo.title} title={recipeInfo.title} />
             </Row>
             <Row xs="1">
               <Button outline color="warning" onClick={toggle1} style={{ marginBottom: '1rem', color: "white" }}>Summary</Button>
@@ -79,6 +79,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
       ) : (
           <div className="center" style={{ padding: "500px 0px 500px 0px" }}>
             <Spinner color="dark" />
+            <br/>
           L O A D I N G
           </div>
         )}

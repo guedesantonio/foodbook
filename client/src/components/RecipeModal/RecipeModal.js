@@ -38,6 +38,7 @@ const RecipeModal = (props) => {
                 {modal && <ModalContent
                     ID={ID}
                     toggle={toggle}
+                    backdrop=  {true}
                 />}
             </Modal>
         </div>
