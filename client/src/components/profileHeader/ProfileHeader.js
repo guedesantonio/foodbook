@@ -23,11 +23,22 @@ class ProfileHeader extends Component {
         return (
             <div style={{paddingTop:"40px"}}>
                 <div className="row">
-                    <Container className="themed-container" fluid={true}>
-                        <Card style={{ backgroundColor: "#FF8802", color: "white",padding:"15px"}}>
+                    <Container className="themed-container" fluid={true} >
+                    
+                        <Card 
+                        style={{ 
+                            backgroundColor: "#FF8802", 
+                            color: "white",
+                            padding:"15px",
+                            boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)",
+                            }}>
                             <CardBody>
                             <Row>
-                                <h4>
+                                <h4
+                                style={{
+                                    color:"white",
+                                    textShadow:" 0 2px 2px black"
+                                  }}>
                                  {user.name.split(" ")[0]}
                                 </h4>
                             </Row>
@@ -47,6 +58,7 @@ class ProfileHeader extends Component {
                                         color: "white"
                                     }}
                                     onClick={this.onLogoutClick}
+                                    className="btn btn-large waves-effect waves-light hoverable accent-3"
                                 >
                                     Logout
                                 </Button>
