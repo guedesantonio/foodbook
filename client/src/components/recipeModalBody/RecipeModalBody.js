@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Collapse, Button, CardBody, Card, Spinner, Row, Col, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
+import parse from "html-react-parser";
 
 const RecipeModalBody = ({ recipeInfo, toggle }) => {
   const [loading, setLoading] = useState(true)
@@ -17,6 +17,10 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
   const toggle2 = () => setIsOpen2(!isOpen2);
   const toggle3 = () => setIsOpen3(!isOpen3);
 
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }  
+
   return (
     <>
       {loading === false ? (
@@ -32,7 +36,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
                 <Card>
                   <CardBody>
                     <div className="summary panel" style={{ backgroundColor: "#FF8802" }}>
-                      {recipeInfo.summary}
+                      {parse(recipeInfo.summary)}
                     </div>
                   </CardBody>
                 </Card>
@@ -47,7 +51,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
                       <ol>
                         {recipeInfo.extendedIngredients && recipeInfo.extendedIngredients.map(ingredient => (
                           <li key={ingredient.name}>
-                            {ingredient.name + ""} {ingredient.measures.metric.amount + ""} {ingredient.measures.metric.unitShort}
+                            {capitalizeFirstLetter(ingredient.name) + ""} {ingredient.measures.metric.amount + ""} {ingredient.measures.metric.unitShort}
                           </li>
                         ))}
                       </ol>
@@ -63,7 +67,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
                   <CardBody>
                     <div className="summary panel" style={{ backgroundColor: "#FF8802" }}>
                       <div className="summary panel" style={{ backgroundColor: "#FF8802" }}>
-                        {recipeInfo.instructions}
+                        {parse(recipeInfo.instructions)}
                       </div>
                     </div>
                   </CardBody>
