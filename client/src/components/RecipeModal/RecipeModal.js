@@ -19,7 +19,7 @@ const RecipeModal = (props) => {
     const toggle = () => setModal(!modal);
 
     return (
-        <div >
+        <div  >
             <Button
             className="btn btn-large waves-effect waves-light hoverable accent-3"
                 style={{
@@ -75,7 +75,7 @@ const ModalContent = (props) => {
     console.log(recipeInfo);
     return (
 
-        <div>
+        <div >
                <RecipeModalBody recipeInfo={recipeInfo} toggle={toggle}/>
         </div>
     );

@@ -19,19 +19,29 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-  }  
+  }
 
   return (
     <>
       {loading === false ? (
-        <div style={{ backgroundColor: "#FF8802", color: "white" }}>
-          <ModalHeader toggle={toggle}><p style={{fontSize:"30px", fontFamily:"roboto"}}>{recipeInfo.title}</p></ModalHeader>
+        <div style={{ backgroundColor: "#FF8802", color: "white", boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)" }}>
+          <ModalHeader
+            toggle={toggle}>
+            <p
+              style={{
+                fontSize: "30px",
+                fontFamily: "roboto",
+                textShadow: " 0 2px 2px black",
+                borderColor: "#FF8802"
+              }}>
+              {recipeInfo.title}</p>
+          </ModalHeader>
           <ModalBody   >
             <Row xs="1">
               <img src={recipeInfo.image} className="recipeImage" alt={recipeInfo.title} title={recipeInfo.title} />
             </Row>
             <Row xs="1">
-              <Button outline color="warning" onClick={toggle1} style={{ marginBottom: '1rem', color: "white" }}>Summary</Button>
+              <Button outline color="warning" onClick={toggle1} style={{ marginBottom: '1rem', color: "white" ,textShadow: " 0 2px 2px black" }}>Summary</Button>
               <Collapse isOpen={isOpen}>
                 <Card>
                   <CardBody>
@@ -43,7 +53,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
               </Collapse>
             </Row>
             <Row xs="1">
-              <Button outline color="warning" onClick={toggle2} style={{ marginBottom: '1rem', color: "white" }}>Ingredients</Button>
+              <Button outline color="warning" onClick={toggle2} style={{ marginBottom: '1rem', color: "white", textShadow: " 0 2px 2px black" }}>Ingredients</Button>
               <Collapse isOpen={isOpen2}>
                 <Card>
                   <CardBody>
@@ -61,7 +71,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
               </Collapse>
             </Row>
             <Row xs="1">
-              <Button outline color="warning" onClick={toggle3} style={{ marginBottom: '1rem', color: "white" }}>Instructions</Button>
+              <Button outline color="warning" onClick={toggle3} style={{ marginBottom: '1rem', color: "white", textShadow: " 0 2px 2px black" }}>Instructions</Button>
               <Collapse isOpen={isOpen3}>
                 <Card>
                   <CardBody>
@@ -76,14 +86,25 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
             </Row>
           </ModalBody>
           <ModalFooter>
-            <Button outline color="warning" onClick={toggle}>Close</Button>
+            <Button
+             className="btn btn-large waves-effect waves-light hoverable accent-3"
+              style={{
+                width: "140px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                backgroundColor: "#FF8802",
+                borderColor: "white",
+                color: "white"
+              }}
+              outline color="warning"
+              onClick={toggle}>Close</Button>
           </ModalFooter>
 
         </div>
       ) : (
           <div className="center" style={{ padding: "500px 0px 500px 0px" }}>
             <Spinner color="dark" />
-            <br/>
+            <br />
           L O A D I N G
           </div>
         )}
