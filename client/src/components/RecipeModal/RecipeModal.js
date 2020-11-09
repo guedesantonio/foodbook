@@ -39,7 +39,6 @@ const RecipeModal = (props) => {
             toggle={toggle} 
             modalClassName="modal-dialog" 
             style={{ maxHeight: "100vh", overflowY: "auto" }}
-            backdrop=  {false}
             container= "div.App"
             >
                 {modal && <ModalContent
