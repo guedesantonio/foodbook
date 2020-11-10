@@ -87,7 +87,7 @@ const RecipeModalBody = ({ recipeInfo, toggle }) => {
           </ModalBody>
           <ModalFooter>
             <Button
-             className="btn btn-large waves-effect waves-light hoverable accent-3"
+             className=" waves-effect waves-light hoverable accent-3"
               style={{
                 width: "140px",
                 borderRadius: "3px",
