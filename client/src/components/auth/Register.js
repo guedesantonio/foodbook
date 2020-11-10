@@ -46,7 +46,7 @@ render() {
 return (
       <div className="container valign-wrapper justify-content-center" 
       style={{ 
-        height: "65vh", width:"85vw", 
+        height: "75vh", width:"85vw", 
         backgroundColor: "#FF8802", 
         marginTop: "230px",
         boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)",

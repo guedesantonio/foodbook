@@ -44,7 +44,7 @@ render() {
     const { errors } = this.state;
 return (
       <div className="container valign-wrapper justify-content-center" style={{ 
-        height: "45vh", width:"80vw", 
+        height: "55vh", width:"80vw", 
         backgroundColor: "#FF8802", 
         marginTop: "330px",
         boxShadow: "3px 3px 5px 6px rgba(0, 0, 0, 0.4)"
