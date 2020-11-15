@@ -72,7 +72,7 @@ return (
               <p style={{
                 color:"white"
                 , textShadow:" 0 2px 2px black"}}>
-                Already have an account? <Link to="/login">Log in</Link>
+                Already have an account? <Link to="/login">Log In</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
