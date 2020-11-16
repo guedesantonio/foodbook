@@ -31,13 +31,17 @@
   ## Installation
 
    The user needs to run:
+
     ```
     npm install
     ```
+
   in the command line in order to install the required dependencies for this app on your system. In order to run this app please type in the command line and execute:
+
     ```
     npm start
     ```
+    
   This app has also been deployed online, please click [here](https://guedesantonio-foodbook.herokuapp.com/) and start using it.
 
   ## Usage
